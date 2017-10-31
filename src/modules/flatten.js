@@ -1,14 +1,10 @@
-var result = [];
-
-function flatten(arr) {
-  for(var i = 0; i< arr.length; i++) {
-    if(Object.prototype.toString.call(arr[i]) !== '[object Array]') {
-      result.push(arr[i]);
-    } else {
-      flatten(arr[i]);
+var flatten = function(array) {
+  return array.reduce(function(previous, i) {
+    if (Object.prototype.toString.call(i) !== '[object Array]') {
+      return (previous.push(i), previous);
     }
-  }
-  return result;
-}
+    return (Array.prototype.push.apply(previous, flatten(i)), previous);
+  }, []);
+};
 
 module.exports = flatten;

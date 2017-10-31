@@ -13,7 +13,7 @@ describe('flatten', () => {
     expect(result).toEqual([1,2,3]);
   })
   
-  fit('#should return [1,2,3,4,5] given [1,[2,[3, [4]]],5]', () => {
+  it('#should return [1,2,3,4,5] given [1,[2,[3, [4]]],5]', () => {
     var arr = [1,[2,[3, [4]]],5];
     var result = flatten(arr);
     expect(result).toEqual([1,2,3,4,5]);
