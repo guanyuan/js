@@ -12,7 +12,7 @@ function Son(parentName, name) {
   this.childName = name;
 }
 
-Son.prototype = new Parent("");
+Son.prototype = Object.create(Parent.prototype);
 Son.prototype.constructor = Son;
 Son.prototype.getChildrenName = function() {
   return this.childName;
