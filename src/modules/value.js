@@ -1,5 +1,5 @@
-function value(what) {
-  return ((typeof  what) !== 'function')? what : value(what());
+function value(anything) {
+  return (Object.prototype.toString.call(anything) !== '[object Function]')? anything : value(anything());
 }
 
 module.exports = value;
