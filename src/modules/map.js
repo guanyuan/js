@@ -1,7 +1,7 @@
-module.exports = function(arr, fn) {
+module.exports = function(arr, fn, ctx) {
   var result = [];
-  arr.forEach(function(item) {
-    result.push(fn(item))
+  arr.forEach(function(item, index, array) {
+    result.push(fn.call(ctx, item, index, array))
   })
   return result;
 }
