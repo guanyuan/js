@@ -5,11 +5,11 @@ describe('reduce', () => {
     var array = [1,2];
     var result = reduce(array, function(previous, i) {
       return previous + i;
-    }, 1)
-    expect(result).toEqual(4);
+    })
+    expect(result).toEqual(3);
   })
   
-  it('# should return reduced array', () => {
+  it('# should return reduced string "Hello nan bei "', () => {
     var array = [{name: 'nan', age: 23}, {name: 'bei', age: 32}];
     var result = reduce(array, function(previous, i) {
       return previous + i.name + ' ';

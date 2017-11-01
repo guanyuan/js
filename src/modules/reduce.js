@@ -1,8 +1,13 @@
 module.exports = function(array, fn, initialValue) {
-  var result = initialValue;
-  for(var i = 0; i< array.length; i++) {
-    result = fn.call(null, result, array[i])
-  }
+  
+  var stepForward = (typeof initialValue === 'undefined') ? 1 : 0;
+  var result = (typeof initialValue === 'undefined')? array[0] : initialValue;
+  
+  array
+    .slice(stepForward)
+    .forEach(function(value, index) {
+      result = fn.call(null, result, value)
+    })
   
   return result;
 }
