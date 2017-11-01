@@ -7,7 +7,7 @@ module.exports = function(func) {
       var next = params.concat(Array.prototype.slice.call(arguments));
       //持续接收的参数已经满足当初原始函数的形參个数，执行原始函数，返回结果
       if(len - next.length <= 0) {
-        return func.apply(this, next);
+        return func.apply(null, next);
       }
       //不满足个数，将已经获取的参数继续递归
       return getCurry(next);
