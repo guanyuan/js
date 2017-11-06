@@ -7,6 +7,6 @@ var add = function(a, b) {
 describe('currying', () => {
   it('#should return 3 given add(1)(2)', () => {
     var curried = currying(add);
-    expect(curried(1)(2)).toBe(6);
+    expect(curried(1)(2)).toBe(3);
   })
 })
